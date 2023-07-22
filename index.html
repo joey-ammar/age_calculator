@@ -1,45 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--Core-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
 
-    <title>Age calculator</title>
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!--Title-->
+    <title>Age calculator app</title>
   </head>
   <body>
-    <main class="main">
-      <!--upper part-->
-      <div class="main_wrapper">
-        <!--Input-->
-        <div class="main_input">
+    <!--Body / Container / Card-->
+    <div class="card">
+      <div class="container">
+        <!--Form-->
+        <form>
           <!--Day-->
-          <div>
-            <p>Day</p>
-            <input type="text" />
+          <div class="block">
+            <label for="day">DAY</label>
+            <input type="number" placeholder="DD" id="day" />
+            <small></small>
           </div>
           <!--Month-->
-          <div>
-            <p>Month</p>
-            <input type="text" />
+          <div class="block">
+            <label for="month">MONTH</label>
+            <input type="number" placeholder="MM" id="month" />
+            <small></small>
           </div>
-          <!--year-->
-          <div>
-            <p>Year</p>
-            <input type="text" />
+          <!--Year-->
+          <div class="block">
+            <label for="year"> YEAR </label>
+            <input type="number" placeholder="YYYY" id="year" />
+            <small></small>
+          </div>
+        </form>
+        <!--Line and button-->
+        <div class="btn">
+          <hr />
+          <button type="submit" class="sumbit_btn">
+            <img src="./assets/images/icon-arrow.svg" alt="icon" />
+          </button>
+        </div>
+        <!--Output-->
+        <div class="result">
+          <h1><span id="yearResult">..</span>years</h1>
+          <h1><span id="monthResult">..</span>months</h1>
+          <h1><span id="dayResult">..</span>days</h1>
+          <div class="reset_container">
+            <img
+              class="reset"
+              src="./assets/images/icon-arrow.svg"
+              alt="icon"
+            />
+            <p>Reset</p>
           </div>
         </div>
-        <!--Middle part-->
-        <div class="container">
-          <div class="line"></div>
-          <div class="arrow">
-            <img src="./assets/images/icon-arrow.svg" />
-          </div>
-        </div>
-        <!--Lower part-->
-        <h1>.......</h1>
       </div>
-    </main>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
