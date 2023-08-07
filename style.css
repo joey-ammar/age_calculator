@@ -1,14 +1,20 @@
-/*Reset*/
-*,
-*::after,
-*::before {
+/*
+  Import from google fonts
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   list-style: none;
+  text-decoration: none;
   font-family: "Poppins", sans-serif;
 }
-/*Variables*/
+html {
+  font-size: 10px;
+}
+
 :root {
   --Purple: hsl(259, 100%, 65%);
   --Light-red: hsl(0, 100%, 67%);
@@ -18,131 +24,108 @@
   --Smokey-grey: hsl(0, 1%, 44%);
   --Off-black: hsl(0, 0%, 8%);
 }
-/*Set the body to the center*/
+
 body {
+  font-weight: 700;
   background-color: var(--Light-grey);
-  height: 100vh;
+}
+
+.wrapper {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
-/*card*/
-.card {
-  background-color: var(--White);
-  width: 800px;
-  border: 1px solid var(--White);
-  border-radius: 1rem 1rem 10rem 0.1rem;
-  padding: 3rem;
+.wrapper_inside {
+  background-color: var(--Off-white);
+  width: 70rem;
+  height: 60rem;
+  padding: 4rem;
+  border-radius: 2rem;
+  border-bottom-right-radius: 17rem;
 }
-/*form*/
-form {
-  padding: 2rem;
+
+/*Input*/
+.inputs {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  width: 50rem;
+  justify-content: space-between;
+  color: var(--Smokey-grey);
 }
-.block {
+
+.input {
   display: flex;
   flex-direction: column;
-  margin-right: 40px;
 }
+
 label {
-  font-weight: 800;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 input {
-  width: 100px;
-  padding: 0.4rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--Light-grey);
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-}
-input::placeholder {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-/*The arrow and the btn*/
-.btn {
-  display: flex;
-  align-items: center;
-  margin-left: 35px;
-}
-.btn hr {
-  width: 80%;
-}
-.btn button {
-  background-color: var(--Purple);
+  width: 14rem;
   padding: 1rem;
-  border-radius: 100%;
+  padding-left: 2rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  border: 1px solid var(--Light-grey);
+  color: var(--Off-black);
+}
+.input input:focus {
+  border: 1px solid var(--Purple);
+  outline: none;
+}
+.error {
+  font-size: 1.2rem;
+  color: var(--Light-red);
+  text-transform: none;
+  margin-top: 1rem;
+}
+/*btn and line*/
+
+.line_btn {
+  display: flex;
+  align-items: center;
+}
+.line {
+  width: 100%;
+  border-bottom: 1px solid var(--Light-grey);
+}
+button {
+  padding: 2rem;
   border: none;
+  border-radius: 50%;
+  background-color: var(--Purple);
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: 0.3s ease;
 }
-
-/*Result*/
-.result h1 {
-  font-size: 3.5rem;
+/*result*/
+.result {
+  font-size: 7rem;
   font-weight: 800;
   font-style: italic;
-  height: fit-content;
-  margin-left: 40px;
+  margin-bottom: -20px;
+  color: var(--Off-black);
 }
-.result span {
-  color: var(--Purple);
-}
-
-/*Reset*/
-.reset_container {
-  margin-top: 5em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.reset {
-  width: 50px;
-  background-color: var(--Off-black);
-  color: var(--White);
-  border: 1px solid var(--Off-black);
-  cursor: pointer;
-  margin-left: 40px;
-  padding: 0.5rem;
-  border-radius: 100%;
-  transform: rotate(270deg);
-}
-.reset_container p {
-  margin-left: 0.2rem;
-  font-size: 1.5rem;
-  font-weight: 800;
-  font-style: italic;
-  height: fit-content;
+span {
+  color: var(var(--Purple));
 }
 
-/*Query*/
-
-@media screen and (max-width: 600px) {
-  .card {
-    height: 100vh;
-    width: 100%;
-    position: relative;
+@media (max-width: 600px) {
+  .wrapper_inside {
+    width: 50rem;
+    height: 75rem;
+    padding-top: 10rem;
   }
-  form {
-    gap: 1rem;
-    display: flex;
-    flex-direction: column !important;
-  }
-  .block {
+  .inputs {
     display: flex;
     flex-direction: column;
-    margin-right: 0px;
   }
-  .reset_container {
-    position: absolute;
-    bottom: -5rem;
-    right: 3rem;
+  .result {
+    font-size: 5rem;
+
+    color: var(--Off-black);
   }
 }
